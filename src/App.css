@@ -1,0 +1,333 @@
+/* header style */
+
+header {
+  border-bottom: 1px solid lime;
+}
+header .container {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: space-between;
+  .header-left {
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      font-weight: bold;
+      img {
+        width: 50px;
+        padding-right: .5rem;
+      }
+    } 
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .createPostBtn {
+    border: 1px solid lime;
+    border-radius: 15px;
+    color: lime;
+    padding: .5rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .25s;
+    font-weight: bold;
+  }
+
+  .createPostBtn:hover {
+    background-color: lime;
+    color: white;
+  }
+}
+
+.hamberger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+
+  span {
+    display: block;
+    background-color: #000;
+    border-radius: 20px;
+    width: 35px;
+    height: 5px;
+  }
+  .menu-content {
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    opacity: 0;
+    border: 1px solid rgba(0, 0, 0, 0.086);
+    width: max-content;
+    padding: 1rem 3.5rem 1rem 1rem;
+    list-style: none;
+    font-size: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: transparent;
+    box-shadow: 0px 0px 10px 1px #0000001e;
+    transition: opacity .5s, height .5s;
+    height: 0;
+    overflow: hidden;
+    
+    &.active {
+      opacity: 1;
+      height: 100px;
+    }
+  }
+}
+
+
+/* content style */
+
+.content {
+  padding: 3rem 5rem;
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+/* Post component style */
+.post .container {
+  display: grid;
+  grid-gap: 1.3rem;
+}
+.postEle {
+  border: 1px solid lime;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+}
+
+.comment-count {
+  margin-top: 1rem;
+}
+
+/* create Post style */
+div .container:has(.addPost) {
+  padding: 2rem 5rem;
+  form {
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      input , textarea {
+        font-size: 20px;
+        padding: .2rem .5rem;
+        border-radius: 10px;
+        outline: 0;
+        border: 1px solid #000;
+        transition: .25s;
+      }
+      :where(input, textarea):focus {
+        border: 1px solid lime;
+      }
+    }
+
+    button {
+      align-self: self-start;
+      font-size: 20px;
+      border: 0;
+      border-radius: 7px;
+      background-color: lime;
+      padding: .3rem 1rem;
+      box-shadow: 0px 0px 10px 1px #0000001e;
+      cursor: pointer;
+      transition: .1s;
+    }
+    button:hover {
+      background-color: white;
+      color: lime;
+      border: 1px solid #000;
+    }
+  }
+}
+
+/* footer style */
+footer {
+  border-top : 1px solid lime;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+/* Post detail style */
+.Postdetail {
+  .container {
+    margin: 5rem 0 0 0;
+    border: 1px solid lime;
+    border-radius: 15px;
+    padding: 2rem 1rem;
+
+    .post {
+      .PostDes {
+        margin: 2rem 0 0 0;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.123);
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.comment {
+  padding: 1rem;
+  .container {
+    form div {
+      display: flex;
+      border: 1px solid rgb(182, 182, 182);
+      overflow: hidden;
+      border-radius: 10px;
+      
+      input {
+        flex: 5;
+        border: none;
+        padding: .5rem;
+        font-size: 18px;
+        outline: 0;
+      }
+
+      #author {
+        flex: 1;
+      }
+
+      span {
+        background-color: rgb(182, 182, 182);
+        color: rgba(0, 0, 0, 0.933);
+        padding: .4rem;
+        font-size: 20px;
+      }
+      button {
+        outline: 0;
+        background-color: black;
+        color: white;
+        border: 0;
+        padding: 0 1rem;
+        cursor: pointer;
+      }
+    }
+    
+    .allcomment {
+      margin: 2rem 0 0 0;
+      border: 1px solid lime;
+      padding: 1.4rem;
+      border-radius: 10px;
+
+      .usercomment:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+/* login page style */
+
+.login-page {
+  height: max-content;
+  .container {
+    display: gird;
+    place-content: center;
+    min-height: 100%;
+
+    form {
+      div {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 20px;
+        }
+        input {
+          border-radius: 7px;
+          outline: 0;
+          font-size: 20px;
+          padding: .5rem 1rem;
+          border: 1px solid #000;
+        }
+      }
+
+      .button {
+        p {
+          font-size: 20px;
+          a {
+            text-decoration: underline;
+          }
+        }
+        button {
+          border: 1px solid lime;
+          background: none;
+          color: lime;
+          cursor: pointer;
+          transition: .25s;
+          border-radius: 10px;
+          padding: .5rem 1rem;
+          margin-top: 2rem;
+          align-self: self-start;
+          font-size: 20px;          
+
+          &:hover{
+            color: white;
+            background-color: lime;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* register form style */
+.register {
+  margin: 3rem 0;
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+      border: 1px solid black;
+      border-radius: 10px;
+      font-size: 20px;
+      padding: .3rem 1rem;
+      outline: 0;
+      transition: .5s;
+
+      &:focus {
+        border-color: lime;
+      }
+    }
+    button {
+      align-self: start;
+      font-size: 20px;
+      outline: 0;
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      border: 1px solid lime;
+      background-color: white;
+      transition: .25s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lime;
+      }
+    }
+  }
+}
